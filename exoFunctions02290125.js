@@ -8,23 +8,21 @@
 // Modifie le code existant et demande à l’utilisateur via une fonction existante (que tu dois rechercher), le nombre qui sera en entrée de la première fonction. 
 // Objectif : L’utilisateur rentre un nombre, disons 4. Dans la console, je dois voir successivement 16 et 160.
 
-// let userNumber = prompt("Donne un chiffre")
-
-// function square(chiffre1){
-//     console.log(chiffre1 ** 2)
-//     return (chiffre1 ** 2) // retourne le chiffre qui le donnera au prochain appel de la fonction, merci Vi😁
-// }
-// let resultSquare = square(9)
-
-// function multiplySquare(resultSquare){
-//     console.log(typeof resultSquare) //affiche le type de resultSquare Merci Vi😁
-//     console.log(resultSquare * 10)
-// }
-// multiplySquare(resultSquare)
-
-function promptPrenom () {
-    let prenom = prompt(`Quel est ton prénom ?`, `prenom`)
-    console.log(prenom)
+let userNumber = prompt("Donne un chiffre")
+console.log(userNumber)
+//voir pour changer le type de userNumber en number au lieu de string avec parseInt
+function square(userNumber){
+    console.log(typeof userNumber)
+    console.log(userNumber ** 2)
+    return (userNumber ** 2) // retourne le chiffre qui le donnera au prochain appel de la fonction, merci Vi😁
 }
-promptPrenom
+let resultSquare = square(userNumber)
+
+function multiplySquare(resultSquare){
+    console.log(typeof resultSquare) //affiche le type de resultSquare Merci Vi😁
+    console.log(resultSquare * 10)
+}
+multiplySquare(resultSquare)
+
+
 
