@@ -9,14 +9,19 @@
 // Objectif : L’utilisateur rentre un nombre, disons 4. Dans la console, je dois voir successivement 16 et 160.
 
 let userNumber = prompt("Donne un chiffre")
-console.log(userNumber)
+let convertNumber = Number(userNumber)
+console.log(convertNumber)
 //voir pour changer le type de userNumber en number au lieu de string avec parseInt
-function square(userNumber){
-    console.log(typeof userNumber)
-    console.log(userNumber ** 2)
-    return (userNumber ** 2) // retourne le chiffre qui le donnera au prochain appel de la fonction, merci Vi😁
+
+
+function square(convertNumber){
+    console.log(typeof convertNumber)
+    console.log(convertNumber ** 2)
+    return (convertNumber ** 2) // retourne le chiffre qui le donnera au prochain appel de la fonction, merci Vi😁
 }
-let resultSquare = square(userNumber)
+let resultSquare = square(convertNumber)
+
+
 
 function multiplySquare(resultSquare){
     console.log(typeof resultSquare) //affiche le type de resultSquare Merci Vi😁
