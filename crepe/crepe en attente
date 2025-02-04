@@ -1,0 +1,24 @@
+const preparerPate = (quantityFarine, quantityLait, quantityOeufs, quantitySucre) => {
+    if(quantityFarine > 250){
+        console.log("Tu as mis trop de Farine")
+    }else if(quantityFarine < 245){
+        console.log("OK")
+    }else{
+        console.log("encore un peu")
+    }
+
+    if(quantityLait > 500){
+        console.log("Tu as mis trop de lait")
+    }
+
+    if(quantityOeufs > 3){
+        console.log("Tu as mis trop d'oeufs")
+    }
+    
+    if(quantitySucre > 50){
+        console.log("Tu as mis trop de sucre")
+    }
+        
+    console.log(`Les enfants!!, 😋 la pate est prête pour les crèpes 😋, nous y avons mis ${quantityFarine}g de farine, ${quantityLait}ml de lait, ${quantityOeufs} oeufs et ${quantitySucre}g de sucre`)
+    return(quantityFarine, quantityLait, quantityOeufs, quantitySucre)
+}
