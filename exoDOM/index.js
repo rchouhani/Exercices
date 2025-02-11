@@ -1,17 +1,18 @@
-document.querySelectorAll('li').innerText = "li"
-const newOL = document.createElement("ol")
-newOL.innerHTML = "Les recettes d'hiver"
-document.getElementById("intro").appendChild(newOL)
+document.querySelector('h1').innerHTML = "Les recettes de salade"
 
-const newOLspring = document.createElement("ol")
-newOLspring.innerHTML = "Les recettes de printemps"
-document.getElementById("christmas").appendChild(newOLspring)
+const newPastaRecipe = (newPasta) =>{
+const newLiSummer = document.createElement("ul")
+newLiSummer.innerHTML = newPasta
+document.getElementById("pastaRecipe").appendChild(newLiSummer)
+}
+newPastaRecipe("Les pates avec du melon")
+newPastaRecipe("Les pates au jambon")
 
-const newOLAutumn = document.createElement("ol")
-newOLAutumn.innerHTML = "Les recettes d'Automne"
-document.getElementById("pates").appendChild(newOLAutumn)
-
-const newOLSummer = document.createElement("ol")
-newOLSummer.innerHTML = "Les recettes d'été"
-document.getElementById("kings").appendChild(newOLSummer)
+const newRiceRecipe = (newRice) =>{
+    const newUl = document.createElement("ul")
+    newUl.innerHTML = newRice
+    document.getElementById("riceRecipe").appendChild(newUl)
+}
+newRiceRecipe("Le riz à l'avocat")
+newRiceRecipe("Le riz au crabe")
 
