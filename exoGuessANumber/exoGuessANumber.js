@@ -1,22 +1,27 @@
-let userNumber = prompt("Dis-moi un chiffre")
-let convertNumber = parseInt(userNumber)
-let b = boolean(convertNumber)
+const givenNumber = prompt("Dis-moi un chiffre")
+const convertBool = parseInt(givenNumber)
 
-const didIWin = (b) => {
-
-        if(b == true){
-            alert("Vous avez trouvé")
+const didIWin = (convertBool) => {
+        if(convertBool == 22){
+            return(true)
         }
-
         else{
-            alert("tape autre chose")
+            return(false)
         }
-        return b
 }
-didIWin(b)
+didIWin(convertBool)
 
-const gamePlay = (b) => {
-        while (b != true){
-            prompt("tente ta chance")
-        }
+
+const gamePlay = (didIWin) => {
+do{
+    if(didIWin === true){
+        prompt("on arrete le jeu")
+    }
+    else{
+        prompt("essaie encore")
+    }
+    // return didIWin()
+}while (didIWin != true)
+    
 }
+gamePlay(didIWin)
