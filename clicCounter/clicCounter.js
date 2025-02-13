@@ -1,10 +1,19 @@
-const b = document.getElementById('counter')
+const button = document.getElementById('counter')
 let count = 0
 
-b.addEventListener("click", clicCount)
+button.addEventListener('click', clicCount)
 
-function clicCount (){
-    document.getElementById("counter").innerHTML = b++
+function clicCount () {
+    document.getElementById("counter").innerHTML = count++
+}
+
+const buttonMinus = document.getElementById('myBtn')
+
+
+buttonMinus.addEventListener('click', countMinus)
+
+function countMinus () {
+    document.getElementById('counter').innerHTML = count--
 }
 
 // const element = document.getElementById("myBtn");
