@@ -12,8 +12,13 @@ h2{
     margin-left: 30px;
 }
 
+h1{
+    margin-left: 30px;
+    padding-bottom: 30px;
+}
+
 p{
-    margin-left: 45px;
+    margin-left: 30px;
     line-height: 30px;
 }
 
@@ -28,6 +33,7 @@ li{
     width: 800px;
     background-color: white;
     border-radius: 5%;
+    margin: auto;
 }
 
 #omelette{
@@ -43,20 +49,60 @@ li{
     width: 700px;
     margin: 30px;
 }
-
-.ingredients {
-    color: red;
+.preparation h3{
+    color: hsl(332, 51%, 32%);
+    padding-bottom: 15px;
+}
+.preparation ul{
+    margin-right: 60px;
 }
 
+.ingredients ul{
+    padding-bottom: 30px;   
+}
+.ingredients h2{
+    padding-bottom: 30px;
+}
+
+.instructions li:nth-child(6){
+    padding-bottom: 30px;
+}
+.instructions li{
+    padding: 0.5% 0% 0.5% 0;
+}
+.instructions h2{
+    padding-bottom: 30px;
+}
+.nutrition{
+    display: flex;
+    flex-direction: column;
+}
 .nutrition p{
     margin-left: 30px;
 }
+.nutrition h2{
+    padding-bottom: 30px;
 
-.nutrition div{
+}
+/* .nutrition div{
     margin-left: 30px;
+} */
+
+.cat1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 350px;
+    margin-left: 200px;
+}
+.cat1 div:nth-child(12){
+    padding-bottom: 5%;
 }
 .categories{
     display:flex;
-    flex-direction: row;
-    padding: 50px;
+}
+.value{
+    display: flex;
+    padding-bottom: 10px;
+    margin: none;
 }
