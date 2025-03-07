@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="test"></div>
+    <div class="inputs">
+        <label for="latinToMorse">Français vers Morse
+             <input type="text" id="latinToMorse" name="latinToMorse" required autofocus>
+        </label>
 
-
-
+        <label for="morseToLatin">Morse vers Français
+             <input type="text" id="morseToLatin" name="morseToLatin" required autofocus>
+        </label>
+    </div>
 
     <script type="module" src="talkMorse.js"></script>
 </body>

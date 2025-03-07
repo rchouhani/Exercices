@@ -6,24 +6,61 @@ const test = document.querySelector('#test')
 // console.log(latinToMorse)
 
 const getLatinCharacterList = (text) => {
-    // for (let i = 0; i < text.length; i++)
-    const letters = text.split('')
-    console.log(letters)
+
+    const lettersLatin = text.split('')
+    return (lettersLatin)
+
 }
-getLatinCharacterList("hello")
 
 
-const translateLatinCharacter = (letter) => {
-for(const s in latinToMorse) {
-    console.log(`😁😁${s}: ${latinToMorse[s]}`)
+const translateLatinCharacter = (latinLetter) => {
+    return (latinToMorse[latinLetter.toUpperCase()])
 }
-console.log('(❁´◡`❁)', letter)
+
+
+const encode = (latinText) => {
+    
+    const h = getLatinCharacterList(latinText)
+    let m = ""
+    for (let i = 0; i < h.length; i++){
+        m += translateLatinCharacter(h[i])
+    }
+    return (m)
 }
-translateLatinCharacter("")
+console.log(encode("romain"))
 
 
-// const object = { a: 1, b: 2, c: 3 };
+const getMorseCharacterList = (characterMorse) => {
 
-// for (const property in object) {
-//   console.log(`${property}: ${object[property]}`);
-// }
+    const lettersMorse = characterMorse.split(' ')
+    return(lettersMorse)
+
+}
+// console.log(getMorseCharacterList('..-.'))
+
+const translateMorseCharacter = (morseLetter) => {
+
+    return (morseToLatin[morseLetter])
+    
+}
+// console.log(translateMorseCharacter("..-."))
+
+
+const decode = (morseText) => {
+
+    const k = getMorseCharacterList(morseText)
+    // console.log(k)
+    let n = ""
+    for (let i = 0; i < k.length; i++){
+        if(k[i] === "/" || k[i] === ""){
+            n += " "
+        } else {
+            n += translateMorseCharacter(k[i])
+
+        }
+        // console.log(n)
+    }
+    return (n)
+    
+}
+console.log(decode(" -- --- -- "))

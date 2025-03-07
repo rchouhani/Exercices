@@ -1,0 +1,11 @@
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+
+.inputs label{
+    padding-top: 20px;
+}
