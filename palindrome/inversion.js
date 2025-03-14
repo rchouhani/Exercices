@@ -1,53 +1,44 @@
-// const isDayValid = (day) => {
-//     if(day <= 0 || day > 31){
-//         return false
-//     }
-// }
+const userInput = document.querySelector("#dateString")
 
-// const isMonthValid = (month) => {
-//     if(month <= 0 || month >= 13){
-//         return false
-//     }
-// }
+userInput.addEventListener('input', function(){
+   const inputValue = userInput.value
+   console.log("😎😎",inputValue)
+   // checkCorrectDate(inputValue)
+})
 
-// const isYearValid = (year) => {
-//     if(year <= 999 || year >= 10000){
-//         return false
-//     }
-// }
+const checkCorrectDate = (c) => {
 
-// const isValidDate = (day, month, year) => {
-//     if(isDayValid(day) === false){
-//         console.log('le jour doit être entre 0 et 31, tu as tapé: ', day)
-//         return false
-//     } else if (isMonthValid(month) === false) {
-//         console.log('le mois doit être entre 1 et 12, tu as tapé: ', month)
-//         return false
-//     } else if(isYearValid(year) === false){
-//         console.log('l\'année doit être entre 999 et 9999, tu as tapé: ', year)
-//         return false
-//     } else {
-//         console.log(`Bravo tu as donné une date correcte : ${day}/${month}/${year}`)
-//         return `${day}/${month}/${year}`, true
-//     } 
-// }
+   const dayInput =  c[0].substr(0, 2)
+   // console.log("c[0]",c[0])
+   if(dayInput > 30){
+      alert('entrez une date valide')
+   }
+   
+   const monthInput = c[0].substr(2, 2)
+   if(monthInput > 12){
+      alert('Entrez un mois valide')
+   } 
 
-// const isPalindrome = (day, month, year) => {
-//     // console.log('uocuoc', isValidDate(day, month, year))
-//     const goodDate = isValidDate(day, month, year)
-//     if(goodDate === true){
-//         const r = goodDate
-//         console.log('uocuoc')
-//     }
-// }
+   const yearInput = c[0].substr(4, 4)
+   if(yearInput < 999 || yearInput > 9999){
+      alert('Entrez une année valide')
+   }
 
-const isValidDate = (date) => {
-   const r = (new Date()) 
-   if(date !== r){
-        console.log('pas ok', r)
+   let copyC = c[0]
+   copyC = copyC.split("")
+   inputEndroit = copyC
+   let reverseInput = copyC.reverse()
+
+   if(inputEndroit == reverseInput){
+      alert("c'est un palindrome")
    } else {
-        console.log('ok')
+      alert("raté")
    }
 }
-isValidDate('11/03/2026')
+
+const isValidDate = (input) => {
+   const splitInput = input.split("/")
+   checkCorrectDate(splitInput)
+}
+
 
