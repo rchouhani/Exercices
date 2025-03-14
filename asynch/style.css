@@ -45,8 +45,13 @@ nav ul li:hover ul {
   border: black;
 }
 
-.checkBoxPrice{
+.sortSearchBar{
   display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  margin-top: 6%;
+}
+.checkBoxPrice #checkBoxPrice{
   margin-top: 2%;
-  margin-left: 300px;
 }

@@ -47,11 +47,11 @@ const displayDescription = async (data) => {
         newDescriptions.appendChild(newParagraph)
         newDescriptions.style = "display: flex; flex-direction: column; align-items: center; width: 800px; margin: auto; font-size: 1.5rem;"
         
-        // const newImg = document.createElement('img')
-        // newImg.setAttribute('src', data.products[i].images)
-        // newImg.innerText = data.products[i].images
-        // newImg.style = "width: 150px; height: 150px;"
-        // newDescriptions.appendChild(newImg)
+        const newImg = document.createElement('img')
+        newImg.setAttribute('src', data.products[i].images)
+        newImg.innerText = data.products[i].images
+        newImg.style = "width: 150px; height: 150px;"
+        newDescriptions.appendChild(newImg)
 
         const newPrice = document.createElement('p')
         newPrice.innerText = (data.products[i].price + "€")
@@ -72,9 +72,9 @@ searchBar.addEventListener('input', function(){
 })
 
 checkBoxPrice.addEventListener('click', function(){
+
     const checkBoxPrice = document.querySelector('#checkBoxPrice')
     const sortedPrice = checkBoxPrice.checked
-    sortedPrice.sort((a,b) =>(a.getAndDisplayJson(price) < b.getAndDisplayJson(price)))
-    getAndDisplayJson()
 })
 getAndDisplayJson()
+
