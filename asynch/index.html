@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="#">Accueil</a>
+            <ul id="globalList">
+                <li><a href="#">En attente</a></li>
+                <li><a href="#">En attente</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Services</a>
+            <ul id="productsList">
+                <!--Ici sera des produits dynamiquement d'une API-->
+            </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="sortSearchBar">
+          <input id="searchBar" type="search" name="searchBar" autofocus placeholder="Recherche..."/>
+      <label for="checkBoxPrice" class="checkBoxPrice">Trier par prix
+          <input type="checkbox" id="checkBoxPrice" name="checkBoxPrice"/>
+      </label>
+    </div>
+    
+ 
+    <div class="container"></div>
+    <script type="module" src="asynch.js"></script>
+</body>
+</html>

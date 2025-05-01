@@ -7,44 +7,40 @@
 // Étape 6
 // Libre à vous de faire une interface graphique à votre goût !
 
-const matchesRemovingInput = document.querySelector("#matchesRemovingInput")
+
+
+
 const message = document.querySelector("p")
+
 const validBtn = document.querySelector("#validBtn")
-validBtn.setAttribute("disabled", "")
+
+
 const validBtn2 = document.querySelector("#validBtn2")
 validBtn2.setAttribute("disabled", "")
+
+const matchesRemovingInput = document.querySelector("#matchesRemovingInput")
 const matchesRemovingInput2 = document.querySelector("#matchesRemovingInput2")
 let countStartOfMatches = 50
 let newCountMatches = countStartOfMatches
 message.innerText = "Vous allez jouer au jeu des allumettes, le joueur qui prend la dernière allumette a perdu"
 
 
-const turnPlayer =  (matchesRemovingInput, matchesRemovingInput2) => {
-    if(matchesRemovingInput.value !== 0){
-        console.log("👌👌👌", matchesRemovingInput)
-        validBtn2.removeAttribute("disabled")
-    } 
-    if(matchesRemovingInput2.value !== 0){
-        console.log("🤞🤞", matchesRemovingInput2)
-        validBtn.removeAttribute("disabled")
-    }
-}
-turnPlayer(matchesRemovingInput, matchesRemovingInput2)
 
 const removeMatch = (matchesToRemove, matchesToRemove2) => {
 
-newCountMatches = (newCountMatches - matchesToRemove) || (newCountMatches - matchesToRemove2)
-   
-        if(matchesToRemove < 1 
-           || matchesToRemove > 6 
-           || matchesToRemove2 < 1 
-           || matchesToRemove2 > 6){
-            message.innerText = `Vous avez retiré ${matchesToRemove || matchesToRemove2} allumette, le chiffre doit être entre 1 et 6.`
-        } else {        
-            message.innerText = `Vous avez retiré ${matchesToRemove || matchesToRemove2} allumette.`
-        }
-
-        winnerOrLoser(newCountMatches)
+    if(matchesToRemove < 1 
+        || matchesToRemove > 6 
+        || matchesToRemove2 < 1 
+        || matchesToRemove2 > 6){
+         message.innerText = `Vous avez retiré ${matchesToRemove || matchesToRemove2} allumette, le chiffre doit être entre 1 et 6.`
+     } else {       
+         message.innerText = `Vous avez retiré ${matchesToRemove || matchesToRemove2} allumette.`
+            newCountMatches = (newCountMatches - matchesToRemove) || (newCountMatches - matchesToRemove2)
+            console.log("newCountMatches", newCountMatches)
+            winnerOrLoser(newCountMatches)
+     }
+    
+    
 
 }
 
@@ -66,16 +62,21 @@ const winnerOrLoser = (newCountMatches) => {
 
 validBtn.addEventListener("click", () =>{
     let reponse = matchesRemovingInput.value
-    // console.log("reponse", reponse)
     removeMatch(reponse)
     matchesRemovingInput.value = ""
+    validBtn.setAttribute("disabled", "")
+    validBtn2.removeAttribute("disabled")
 })
 
 validBtn2.addEventListener("click", () =>{
+
+    validBtn2.setAttribute("disabled", "")
     let reponse2 = matchesRemovingInput2.value
-    // console.log("reponse2", reponse2)
     removeMatch(reponse2)
     matchesRemovingInput2.value = ""
+    validBtn2.setAttribute("disabled", "")
+    validBtn.removeAttribute("disabled")
+
 })
 
 
