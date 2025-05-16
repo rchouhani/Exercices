@@ -86,25 +86,61 @@ p {
     padding: 1rem;
     width: 115px;
 }
+#input-button > label  button:hover {
+    background: linear-gradient(135deg, hsl(0, 9%, 60%), hsl(0, 41%, 76%));
+
+}
 
 .hero-mobile{
     display:none;
 }
 
-@media (max-width: 375px) {
+@media screen and (max-width: 375px) {
     .container{
         display: flex;
         flex-direction: column;
-
     }
     .right-part{
         display: none;
     }
     .left-part{
         padding: 0;
+        svg {
+            margin: 2rem 0 0 2rem;
+            padding: 0;
+        }
     }
     .hero-mobile{
         display: block;
-        margin-top: 2rem;
+        width: 100vw;
+        height: auto;
+        margin: 2rem 0 2rem 0;
+    }
+    
+    h1 {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
+        margin: 1rem 3rem 0 2rem;
+    }
+    #black-title{
+        letter-spacing: 1.5rem;
+    }
+    .left-part p {
+        text-align: center;
+        line-height: 1.5rem;
+        margin: 1rem 3rem 1.5rem 2rem;
+    }
+
+    #input-button #email{
+        width: 12rem;
+        margin-left: 2rem;
+    }
+    #input-button > label > button {
+        width: 6rem;
+    }
+    #input-button > label  button:hover {
+        background: linear-gradient(135deg, hsl(0, 9%, 60%), hsl(0, 41%, 76%));
     }
 }
