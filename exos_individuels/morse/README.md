@@ -1,0 +1,1 @@
+## Objectif : Manipuler des strings, transformer et manipuler des arrays, pratiquer les dictionnaires et les boucles.

@@ -1,0 +1,1 @@
+## Objectif : Manipuler et découper des strings, parcourir, créer et modifier des tableaux, contrôler des données.
