@@ -106,10 +106,31 @@ app.get("/elders/:name/:city", (req, res) => {
     })
 })
 
-// app.post("/elders/", (req, res) => {
-//     console.log(req.body)
-//     res.send(elders)
-// })
+app.delete("/elders/:name", (req, res) => {
+  elders.forEach((elder) => {
+    if (elder.firstname.toLowerCase() === req.params.name){
+      res.send(elder.stefano)
+    }
+  })
+})
+app.post("/elders", (req, res) => {
+  // comment et où afficher le console.log ?
+  console.log("Body : ", req.body);
+    // Ajouter la tâche au tableau, pkoi le faire içi et dans thunderclient ?
+    elders.push({
+      "firstname": "Ste",
+      "age": 63,
+      "job": "Main",
+      "city": "",
+      "zipcode": "16000",
+      "description": "Marin passionné, Stefano aime improviser quelques sorties et créer des moments chaleureux avec les jeunes.",
+      "imageUrl": "/images/mohammad-samir-huHXKc_usoA-unsplash.jpg",
+      "type": "Un repas"
+    });
+    res.status(201).json({ title: req.body.title }); // a quoi correspond le title ?
+    //comment faire pour avoir une API à jour car actuellement, le tableau d'objet contenant les elders est en dur dans
+    // la page app.js
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
