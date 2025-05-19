@@ -18,8 +18,6 @@ const afficherPointeSapin = (hauteur) => {
 }
 afficherPointeSapin(1)
 
-
-
 const afficherRectangle = (hauteur, largeur) => {
     
     let height = '';
