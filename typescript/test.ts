@@ -11,7 +11,7 @@ class Director {
   public constructor(fullname: string, birthdate: Date){
     this.fullname = fullname;
     this.birthdate = birthdate;
-    console.log(this)
+    // console.log(this)
   }
   public getAge(): Number {
     const d = new Date();
@@ -62,7 +62,7 @@ const badenBaden = new Film ("Baden Baden", 2024, zabouBreitman, Categories.Docu
 const eteOrage = new Film ("Un été d'orages", 2024, charlotteBrandstrom, Categories.Historique)
 
 
-class Clients {
+class Client {
     private fullname: String
     private rentedMovies: Rental[]
 
@@ -73,33 +73,35 @@ class Clients {
 
     rent(movie: Film): void {
         this.rentedMovies.push(new Rental(movie))
+        console.log('🎲🎲', this.rentedMovies)
     }
-
     getClients(): string {
       return `${this.fullname} a emprunté ${this.rentedMovies}`
     }
     
 }
 
+const eva = new Client("Eva")
+
 class Rental {
-    private movie: Film
-    private rentalDate: Date
+    private movie: Film;
+    private rentalDate: Date;
 
     public constructor(movie: Film) {
         this.movie = movie
         this.rentalDate = new Date()
     }
+    getRental(): String {
+      return `${this.movie} a été loué le ${this.rentalDate}`
+    }
 }
 
 function borrowMovie() {
-    const Laila: Clients = new Clients("Laila")
-    const Eva: Clients = new Clients("Eva")
+    const Laila: Client = new Client("Laila")
     Laila.rent(anatomieChute)
-    Eva.rent(badenBaden)
-    console.log('Eva')
 }
 borrowMovie()
 
-
+// console.log(eva.getClients())
 console.log(badenBaden.getFullMovie())
 console.log(eteOrage.getFullMovie())
