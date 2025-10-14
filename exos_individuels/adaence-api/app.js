@@ -1,8 +1,13 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const cors = require('cors');
+const port = 3005;
+
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cors())
+
+
 const elders = [
     {
       "firstname": "Franco",
@@ -83,45 +88,45 @@ const elders = [
       "description": "Musicien passionné, Samir aime improviser quelques notes et créer des moments chaleureux avec les jeunes.",
       "imageUrl": "/images/mohammad-samir-huHXKc_usoA-unsplash.jpg",
       "type": "Un repas"
+    },
+    {
+      "firstname": "Edwige",
+      "age": 65,
+      "job": "Développeuse",
+      "city": "Paris",
+      "zipcode": "75013",
+      "description": "Edwigeuse impliqué dans le développement d'un site inter-gouvernemental sur la diététique",
+      "imageUrl": "/images/mohammad-samir-huHXKc_usoA-unsplash.jpg",
+      "type": "Une capsule"
     }
   ]
 
-app.get('/elders/', (req, res) => {
-    elders.forEach((elder) => {
-        if(elder == req.params){
-        }
-    })
-    res.send(elders);
-})
 
 
-app.get("/elders/:name/:city", (req, res) => {
-    elders.forEach((elder) => {
-        if (elder.firstname.toLowerCase() === req.params.name.toLowerCase()
-            || elder.city.toLowerCase() === req.params.city.toLowerCase()){
-            res.send(elder)
-        } else {
-            res.send(`${req.params.name} et ${req.params.city} n'existe pas encore`)
-        }
-    })
+app.get("/elders", (req, res) => {
+  res.send(elders);
 })
 
-app.delete("/elders/:name", (req, res) => {
-  elders.forEach((elder) => {
-    if (elder.firstname.toLowerCase() === req.params.name){
-      res.send(elder.stefano)
-    }
-  })
+app.get("/elders/city/search", (req, res) => {
+  res.send(elders.filter((elder) => elder.city.toLowerCase() == req.query.city.toLowerCase()));
+});
+
+app.get("/elders/type/search", (req, res) => {
+  encodeURI(req.query.type)
+  res.send(elders.filter((elder) => {
+    console.log(elder.type.toLowerCase(), req.query.type.toLowerCase())
+    return elder.type.toLowerCase() === req.query.type.toLowerCase();
+   }));
+    
 })
+
 app.post("/elders", (req, res) => {
-  // comment et où afficher le console.log ?
-  console.log("Body : ", req.body);
     // Ajouter la tâche au tableau, pkoi le faire içi et dans thunderclient ?
     elders.push({
-      "firstname": "Ste",
+      "firstname": "Stefano",
       "age": 63,
-      "job": "Main",
-      "city": "",
+      "job": "Marin",
+      "city": "Palerme",
       "zipcode": "16000",
       "description": "Marin passionné, Stefano aime improviser quelques sorties et créer des moments chaleureux avec les jeunes.",
       "imageUrl": "/images/mohammad-samir-huHXKc_usoA-unsplash.jpg",

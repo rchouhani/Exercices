@@ -3,9 +3,9 @@ const afficherEtoiles = (number) => {
     for (let i = 1; i <= number; i++){
         n += '*' ;
     }
-    console.log(n);
+    return(n);
 }
-
+// afficherEtoiles(5)
 
 const afficherPointeSapin = (hauteur) => {
     console.log('  +')
@@ -14,23 +14,22 @@ const afficherPointeSapin = (hauteur) => {
        h += '';
     }
     console.log(h)
-    return
 }
-afficherPointeSapin(1)
+// afficherPointeSapin(1)
 
 const afficherRectangle = (hauteur, largeur) => {
     
-    let height = '';
-    let large = '';
+    let h = '';
+    let l = '';
 
     for (let i = 1; i <= hauteur; i++){
-        height = afficherEtoiles(hauteur);
+        h += afficherEtoiles(hauteur);
     }
-    console.log(height);
+    console.log(h);
 
     for(let j = 1; j <= largeur; j++){
-        large += afficherEtoiles(largeur);
+        l += afficherEtoiles(largeur);
     }
-    console.log(large);
+    console.log(l);
 }
-afficherRectangle(2, 3)
+afficherRectangle(4, 6)
